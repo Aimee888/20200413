@@ -5,7 +5,7 @@
 @IDE     : PyCharm
 @Author  : Aimee
 @Date    : 2020/4/23 20:16
-@Desc    :爬虫 - 数据分析
+@Desc    :爬虫 - 爬取豆瓣电影名等
 ================================================="""
 
 import requests
@@ -13,7 +13,6 @@ import json
 import pandas as pd
 
 
-# https://movie.douban.com/j/search_subjects?type=movie&tag=%E8%B1%86%E7%93%A3%E9%AB%98%E5%88%86&sort=rank&page_limit={}&page_start=0
 def doubanmovie():
     limit = 10
     url = "https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&page_limit={}&page_start=0".format(limit)
@@ -21,7 +20,7 @@ def doubanmovie():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
     }
-    result = requests.get(url.format(limit), headers=headers)
+    result = requests.get(url, headers=headers)
     json_result = result.text
     json_result = json.loads(json_result)
     col = ['title', 'rate', 'url']
