@@ -12,7 +12,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel
 from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtGui import QPainter, QPixmap
-from ui_event import Ui_MainWindow
+from 事件拦截.ui_event import Ui_MainWindow
 
 
 class QmyLabel(QLabel):

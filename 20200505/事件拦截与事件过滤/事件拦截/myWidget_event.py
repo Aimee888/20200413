@@ -10,9 +10,9 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QEvent
 from PyQt5.QtGui import QPainter, QPixmap
-from ui_event import Ui_Form
+from 事件拦截.ui_event import Ui_Form
 
 
 class QmyMidget(QWidget):
@@ -28,6 +28,14 @@ class QmyMidget(QWidget):
         # # ===================由connectSlotsByName()自动关联的槽函数
 
         # # ===================自定义槽函数
+
+    def event(self, event):
+        if event.type() == QEvent.Paint:
+            return True
+        elif event.type() == QEvent.KeyRelease and event.key() == Qt.Key_Tab:
+            rect = self.ui.btnMove.geometry()
+            self.ui.btnMove.setGeometry(rect.left() + 100, rect.top(), rect.width(), rect.height())
+        return super().event(event)
 
     def paintEvent(self, event):  # 绘制窗体背景图片
         painter = QPainter(self)
