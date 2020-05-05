@@ -41,8 +41,8 @@ def main():
         headers = {
             'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36",
         }
-        img_response = requests.get(pic_url, cookies=s.cookies, headers=headers)
-        print(img_response.content)
+        img_response = requests.get(pic_url, headers=headers)
+        print(img_response)
         # f = open('./pictures/{}.jpg'.format(count), 'wb')
         # f.write(img_response.content)
         # f.close()

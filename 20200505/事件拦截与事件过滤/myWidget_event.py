@@ -1,48 +1,29 @@
 #!/usr/bin/env python
 # _*_ coding: UTF-8 _*_
 """=================================================
-@Project -> File    : Operate_system_ModeView_structure -> myMainWindow_event.py
+@Project -> File    : Operate_system_ModeView_structure -> myWidget_event.py
 @IDE     : PyCharm
 @Author  : Aimee
-@Date    : 2020/4/30 14:29
+@Date    : 2020/5/5 9:35
 @Desc    :
 ================================================="""
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel
-from PyQt5.QtCore import Qt, pyqtSignal
+from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter, QPixmap
-from ui_event import Ui_MainWindow
+from ui_event import Ui_Form
 
 
-class QmyLabel(QLabel):
-    doubleClicked = pyqtSignal()  # 自定义信号
-
-    def mouseDoubleClickEvent(self, event):  # 双击事件的处理
-        self.doubleClicked.emit()
-
-
-class QmyMainWindow(QMainWindow):
+class QmyMidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)  # 调用父类构造函数
-        self.ui = Ui_MainWindow()  # 创建UI对象
+        self.ui = Ui_Form()  # 创建UI对象
         self.ui.setupUi(self)  # 构造UI
 
         # # ===================自定义功能函数
 
         # # ===================事件处理函数
-        LabHello = QmyLabel(self)
-        LabHello.setText("双击我啊")
-        font = LabHello.font()
-        font.setPointSize(14)
-        font.setBold(True)
-        LabHello.setFont(font)
-        size = LabHello.sizeHint()
-        LabHello.setGeometry(70, 60, size.width(), size.height())
-        LabHello.doubleClicked.connect(self.do_doubleClicked)
-
-    def do_doubleClicked(self):
-        print("标签被双击了")
 
         # # ===================由connectSlotsByName()自动关联的槽函数
 
@@ -98,6 +79,6 @@ class QmyMainWindow(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)  # 创建app
-    form = QmyMainWindow()
+    form = QmyMidget()
     form.show()
     sys.exit(app.exec_())
