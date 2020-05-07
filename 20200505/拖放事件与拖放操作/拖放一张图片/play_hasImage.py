@@ -5,10 +5,14 @@
 @IDE     : PyCharm
 @Author  : Aimee
 @Date    : 2020/5/6 14:15
-@Desc    :
+@Desc    :拖动图片到窗口并且显示图片
+            使用QImageReader解决了文件格式不对的读取温蒂
+            使用QImage解决了图片文件过大的问题。
 ================================================="""
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap, QImage, QImageReader
 from ui_hasImage import Ui_Form
 
 
@@ -24,14 +28,31 @@ class QmyWidget(QWidget):
 
     # # =======================================事件处理函数
     def dragEnterEvent(self, event):
-        for strLine in event.mimeData().formats():
-            print(strLine)
-        if event.mimeData().hasText():
+        if event.mimeData().hasUrls():
             print("aaa")
             event.acceptProposedAction()  # 接收拖放操作
 
     def dropEvent(self, event):
-        event.accept()
+        # # 方法一：针对小图片
+        # pixmap = QPixmap(event.mimeData().urls()[0].toLocalFile())
+        # self.ui.LabPic.setPixmap(pixmap)
+        #
+        # # 方法二：小图片和PNG格式的大图片
+        # img = QImage()
+        # print(event.mimeData().urls()[0].toLocalFile())
+        # img.load(event.mimeData().urls()[0].toLocalFile())
+        # pixmap = QPixmap.fromImage(img.scaled(self.ui.LabPic.size(), Qt.KeepAspectRatio))
+        # self.ui.LabPic.setPixmap(pixmap)
+
+        # 方法三：小图片和大图片
+        reader = QImageReader()
+        print(event.mimeData().urls()[0].toLocalFile())
+        reader.setFileName(event.mimeData().urls()[0].toLocalFile())
+        reader.setDecideFormatFromContent(True)
+        if reader.canRead():
+            img = QImage(reader.read())
+            pixmap = QPixmap.fromImage(img.scaled(self.ui.LabPic.size(), Qt.KeepAspectRatio))
+            self.ui.LabPic.setPixmap(pixmap)
 
 
 if __name__ == '__main__':

@@ -42,8 +42,8 @@ def fang_spider():
 def main():
     print("main() func is starting...")
     names, prices = fang_spider()
-    print(names)
-    print(prices)
+    # print(names)
+    # print(prices)
     bar = Bar()
     bar.add_xaxis(names)
     bar.add_yaxis('长沙房价图', prices)

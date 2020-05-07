@@ -46,11 +46,19 @@ class QmyWidget(QWidget):
                 event.ignore()
 
     def dropEvent(self, event):
+        # 方法一
         filename = event.mimeData().urls()[0].path()  # 完整文件名
+        print(filename)
         cnt = len(filename)
         realname = filename[1:cnt]  # 去掉最左边的"/"
         basename, ext = os.path.splitext(realname)
         ext = ext.upper()
+
+        # # 方法二
+        # realname = event.mimeData().urls()[0].toLocalFile()
+        # basename, ext = os.path.splitext(realname)
+        # ext = ext.upper()
+
         if ext == ".JPG" or ext == ".PNG":
             pixmap = QPixmap(realname)
             self.ui.LabPic.setPixmap(pixmap)
