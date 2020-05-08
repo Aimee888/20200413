@@ -46,6 +46,8 @@ def main():
     # print(prices)
     bar = Bar()
     bar.add_xaxis(names)
+
+
     bar.add_yaxis('长沙房价图', prices)
     bar.set_global_opts(
             xaxis_opts=opts.AxisOpts(
