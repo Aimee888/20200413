@@ -243,7 +243,7 @@
                     <string notr="true">background-color: rgb(197, 197, 197);</string>
                    </property>
                    <property name="text">
-                    <string>    Total Tests</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -258,7 +258,7 @@
                     <string notr="true">background-color: rgb(226, 226, 226);</string>
                    </property>
                    <property name="text">
-                    <string>    Completed Tests</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -273,7 +273,7 @@
                     <string notr="true">background-color: rgb(197, 197, 197);</string>
                    </property>
                    <property name="text">
-                    <string>    Failed Tests</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -288,7 +288,7 @@
                     <string notr="true">background-color: rgb(226, 226, 226);</string>
                    </property>
                    <property name="text">
-                    <string>    Section Loop</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -303,7 +303,7 @@
                     <string notr="true">background-color: rgb(197, 197, 197);</string>
                    </property>
                    <property name="text">
-                    <string>    Elapsed Time</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -346,7 +346,7 @@
                    <string notr="true">background-color: rgb(197, 197, 197);</string>
                   </property>
                   <property name="text">
-                   <string>    S/N</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -361,7 +361,7 @@
                    <string notr="true">background-color: rgb(226, 226, 226);</string>
                   </property>
                   <property name="text">
-                   <string>    Remained Time</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -445,7 +445,7 @@
 background-color: rgb(170, 170, 255);</string>
                    </property>
                    <property name="text">
-                    <string>TESTING</string>
+                    <string/>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
