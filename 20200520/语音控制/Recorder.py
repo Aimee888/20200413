@@ -61,9 +61,9 @@ def play_audio(file_name):
 
 
 def main():
-    record_audio("record.pcm")
+    record_audio("chinese_test_sphinx.pcm")
     print("录音完毕")
-    play_audio("record.pcm")
+    play_audio("chinese_test_sphinx.pcm")
     print("放音完毕")
 
 
