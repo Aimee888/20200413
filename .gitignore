@@ -1,14 +1,12 @@
 # Byte-compiled / optimized / DLL files
+<<<<<<< HEAD
 20200520/语音控制/audio/
 20200520/语音控制/exe/
+=======
+>>>>>>> 31691ad170242e3398448684f30a07b1605499b8
 20200520/语音控制/speech-demo/
-20200520/语音控制/chinese_test_sphinx.pcm
-20200520/语音控制/chinese_test_sphinx.wav
-20200520/语音控制/english_test_sphinx.pcm
-20200520/语音控制/english_test_sphinx.wav
-20200520/语音控制/record.wav
-20200520/语音控制/test.pcm
-20200520/语音控制/record.pcm
+20200520/语音控制/audio/
+20200520/语音控制/exe/
 20200520/语音控制/rose.exe
 20200520/玫瑰花/rose.exe
 20200519/lovers_head_sculpture/picture
