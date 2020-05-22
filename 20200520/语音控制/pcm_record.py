@@ -36,7 +36,7 @@ def record_audio(file_name):
     count = 0
     print("开始录音")
 
-    while count < TIME * 20:
+    while count < TIME * 13:
         string_audio_data = stream.read(chunk)
         my_buf.append(string_audio_data)
         count += 1
@@ -50,6 +50,7 @@ def record_audio(file_name):
 # 放音
 def play_audio(file_name):
     chunk = 1024
+    framerate = 16000
 
     wf = wave.open(file_name, 'rb')
     p = PyAudio()
@@ -67,8 +68,8 @@ def play_audio(file_name):
 
 
 def main():
-    record_audio("chinese_test_sphinx.pcm")
-    play_audio("chinese_test_sphinx.pcm")
+    record_audio("./audio/chinese_test_sphinx.pcm")
+    play_audio("./audio/chinese_test_sphinx.pcm")
 
 
 if __name__ == '__main__':

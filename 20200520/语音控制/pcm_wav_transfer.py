@@ -38,5 +38,5 @@ def wave2pcm(wav_file, pcm_file):
 
 
 if __name__ == '__main__':
-    pcm2wave("record.pcm", "record.wav")
-    wave2pcm("record.wav", "test.pcm")
+    pcm2wave("./audio/chinese_test_sphinx.pcm", "./audio/chinese_test_sphinx.wav")
+    # wave2pcm("record.wav", "test.pcm")

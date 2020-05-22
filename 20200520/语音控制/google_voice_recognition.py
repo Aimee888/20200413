@@ -20,7 +20,7 @@ def voice2Text(file_name):
     with sr.AudioFile(voice_file) as source:
         audio = r.record(source)
     try:
-        content = r.recognize_google(audio, language='en-US')
+        content = r.recognize_google(audio, language='zh-CN')
         print(content)
         # print("Google Speech Recognition:" + content)
     except sr.UnknownValueError:
@@ -33,8 +33,7 @@ def voice2Text(file_name):
 
 if __name__ == '__main__':
     pass
-    # wave2pcm("record.wav")
-    # pcm2wave("record.pcm")
+    voice2Text("./audio/chinese_test_sphinx.wav")
     # voice2Text("record.wav")
     # voice2Text("audio-file.flac")
 

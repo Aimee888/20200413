@@ -9,7 +9,7 @@
 ================================================="""
 import os
 import subprocess
-from pcm_record import record_audio
+from pcm_record import record_audio, play_audio
 from sphinx_voice_recognition import wav2txt
 from pcm_wav_transfer import pcm2wave
 
@@ -25,12 +25,14 @@ command_set = {
 def main():
     # 录音存为record.pcm
     record_audio("./audio/test.pcm")
+    play_audio("./audio/test.pcm")
 
     # 将pcm转换为wav格式
     pcm2wave("./audio/test.pcm", "./audio/test.wav")
 
     # 将wave音频转换为文字
     word = wav2txt("./audio/test.wav", "zh-CN")
+    # word = wav2txt("./audio/test.wav", "en-US")
     print(word)
 
     if "退出" in word:
